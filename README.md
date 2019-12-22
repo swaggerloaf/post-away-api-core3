@@ -7,7 +7,9 @@ dotnet add package MongoDB.Driver
 
 use PostAwayDb
 db.createCollection('Posts')
-db.Posts.insertMany([{'Title':'Design Patterns','Body':'Computers','User':'Glenn'}, {'Title':'Clean. Martin'}])
+db.createCollection('Users')
+db.Posts.insertMany([
+{'Title':'Design Patterns are Us','Body':'So many patterns dude, 'User':'Fred'},{'Title':'Design Patterns are Us as welll','Body':'So many patterns sweetheart, 'User':'Brian'},{'Title':'Design Patterns are Us','Body':'So many patterns dudess, 'User':'Tom'}]);
 
 db.Posts.find({}).pretty()
 

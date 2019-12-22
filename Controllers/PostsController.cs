@@ -17,8 +17,13 @@ namespace PostAway.API.Controllers
     }
 
     [HttpGet]
-    public ActionResult<List<Post>> Get() =>
-        _postService.Get();
+    public ActionResult<List<Post>> Get()
+    {
+
+      var postsFromRepo = _postService.GetPosts();
+      return new JsonResult(postsFromRepo);
+    }
+
 
     [HttpGet("{id:length(24)}", Name = "GetPost")]
     public ActionResult<Post> Get(string id)
